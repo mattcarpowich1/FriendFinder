@@ -6,9 +6,6 @@ $(document).ready(function() {
   // Hide error message
   $('#message').hide();
 
-  // Hide modal
-  $('#modal').hide();
-
   // When the form is submitted...
   $('#submit').on('click', function(e) {
 
