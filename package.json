@@ -8,6 +8,9 @@
   },
   "author": "Matt Carpowich",
   "license": "ISC",
+  "engines": {
+    "node": "7.9.0"
+  },
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",

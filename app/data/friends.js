@@ -1,35 +1,51 @@
 let friends = [
 	{
-	  "name":"Ahmed",
-	  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+	  "name":"Neutral Ned",
+	  "photo":"https://media.townhall.com/thm/resources/images/headshots/guybenson.jpg",
 	  "scores":[
-	      5,
-	      1,
-	      4,
-	      4,
-	      5,
-	      1,
-	      2,
-	      5,
-	      4,
-	      1
-	    ]
+	      3,
+	      3,
+	      3,
+	      3,
+	      3,
+	      3,
+	      3,
+	      3,
+	      3,
+	      3
+  		]
 	},
 	{
-		"name":"Greg",
-	  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+		"name":"Opinionated Oliver",
+	  "photo":"https://i.kinja-img.com/gawker-media/image/upload/s--85qPwHnY--/c_scale,fl_progressive,q_80,w_800/cxfwxcak0qyqrcfqujfn.png",
 	  "scores":[
+	      5,
+	      5,
+	      5,
+	      5,
+	      5,
+	      5,
+	      5,
+	      5,
+	      5,
+	      5
+    	]
+	},
+	{
+		"name":"Whimsical Wilma",
+	  "photo":"http://dreamatico.com/data_images/woman/woman-3.jpg",
+	  "scores":[
+	      2,
+	      2,
+	      1,
+	      1,
+	      3,
+	      1,
 	      2,
 	      1,
 	      4,
-	      1,
-	      5,
-	      1,
-	      3,
-	      5,
-	      2,
-	      1
-	    ]
+	      2
+    	]
 	}
 ]
 

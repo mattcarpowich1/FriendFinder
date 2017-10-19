@@ -1,1 +1,162 @@
-<h2>Survey Page</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/survey.js"></script>
+</head>
+<body>
+  <div class="container main">
+    <h1 id="survey" class="blue-text">Survey</h1>
+      <form method="POST" action="/api/friends">
+        <div class="input-field">
+          <label for="name">Name (Required)</label>
+          <input name="name" placeholder="Your name here" id="name" type="text" required>
+        </div>
+        <div class="input-field">
+          <label for="link">Link to Photo Image (Required)</label>
+          <input name="link" placeholder="Image URL" id="link" type="text" required>
+        </div>
+        <div class="input-field">
+          <h3>Question 1</h3>
+          <label class="label">You love to talk!</label>
+          <select class="validate" name="q1">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Disagree Somewhat</option>
+            <option value="3">Neutral</option>
+            <option value="4">Agree Somewhat</option>
+            <option value="5">Strongly Agree</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <h3>Question 2</h3>
+          <label class="label">You would consider yourself a chill person.</label>
+          <select name="q2">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Disagree Somewhat</option>
+            <option value="3">Neutral</option>
+            <option value="4">Agree Somewhat</option>
+            <option value="5">Strongly Agree</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <h3>Question 3</h3>
+          <label class="label">You make decisions based on reason and logic rather than emotions.</label>
+          <select name="q3">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Disagree Somewhat</option>
+            <option value="3">Neutral</option>
+            <option value="4">Agree Somewhat</option>
+            <option value="5">Strongly Agree</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <h3>Question 4</h3>
+          <label class="label">You feel more energetic after spending time with a group of people.</label>
+          <select name="q4">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Disagree Somewhat</option>
+            <option value="3">Neutral</option>
+            <option value="4">Agree Somewhat</option>
+            <option value="5">Strongly Agree</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <h3>Question 5</h3>
+          <label class="label">You would consider yourself a progressive.</label>
+          <select name="q5">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Disagree Somewhat</option>
+            <option value="3">Neutral</option>
+            <option value="4">Agree Somewhat</option>
+            <option value="5">Strongly Agree</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <h3>Question 6</h3>
+          <label class="label">NFL players should be required to stand during the national anthem.</label>
+          <select name="q6">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Disagree Somewhat</option>
+            <option value="3">Neutral</option>
+            <option value="4">Agree Somewhat</option>
+            <option value="5">Strongly Agree</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <h3>Question 7</h3>
+          <label class="label">People come to <em>you</em> for advice.</label>
+          <select name="q7">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Disagree Somewhat</option>
+            <option value="3">Neutral</option>
+            <option value="4">Agree Somewhat</option>
+            <option value="5">Strongly Agree</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <h3>Question 8</h3>
+          <label class="label">You are not afraid to share your opinions with others</label>
+          <select name="q8">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Disagree Somewhat</option>
+            <option value="3">Neutral</option>
+            <option value="4">Agree Somewhat</option>
+            <option value="5">Strongly Agree</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <h3>Question 9</h3>
+          <label class="label">It is often difficult for you to relate to other people’s feelings.</label>
+          <select name="q9">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Disagree Somewhat</option>
+            <option value="3">Neutral</option>
+            <option value="4">Agree Somewhat</option>
+            <option value="5">Strongly Agree</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <h3>Question 10</h3>
+          <label class="label">You rarely get carried away by fantasies and ideas.</label>
+          <select name="q10">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Disagree Somewhat</option>
+            <option value="3">Neutral</option>
+            <option value="4">Agree Somewhat</option>
+            <option value="5">Strongly Agree</option>
+          </select>
+        </div>
+        <div class="input-field submit-area">
+          <button type="submit" class="waves-effect waves-light btn-large blue" id="submit">Submit Survey</button>
+        </div>
+      </form>
+      <p id="message"></p>
+      <div id="modal" class="valign-wrapper center-align">
+        <h4 id="match_text">You matched with 
+          <span id="friend_name"></span>!</h4>
+        <img id="photo" src="" alt="friend image" class="responsive-img">
+      </div>
+  </div>
+</body>
+</html>

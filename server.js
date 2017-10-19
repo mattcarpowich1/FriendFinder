@@ -6,13 +6,13 @@ const home = require('./app/routing/htmlRoutes');
 const api = require('./app/routing/apiRoutes');
 
 const app = express();
-const PORT = 3000;
+const PORT = 8000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join('./app', 'public')));
 
 app.use('/', home);
 app.use('/api', api);

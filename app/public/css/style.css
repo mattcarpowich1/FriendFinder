@@ -1,0 +1,85 @@
+body {
+	background-color: #2196F3;
+}
+
+.main {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 30px;
+	background-color: white;
+}
+
+h1#title {
+	margin-top: 5px;
+	font-family: 'Oleo Script', cursive !important;
+	font-size: 5em;
+}
+
+#survey {
+	margin-top: 5px !important;
+}
+
+#links {
+	margin-top: 15px;
+}
+
+label {
+	font-size: 20px !important;
+	color: #212121 !important;
+	position: relative !important;
+}
+
+h3 {
+	margin: 0 !important;
+	margin-bottom: 10px !important;
+	color: #2196F3 !important;
+	font-size: 32px !important;
+}
+
+.dropdown-content li>a,
+.dropdown-content li>span {
+	color: #2196F3 !important;
+}
+
+.dropdown-content li:nth-child(1)>a,
+.dropdown-content li:nth-child(1)>span {
+	color: #212121 !important;
+}
+
+#message {
+	color: red;
+}
+
+#name:focus, #link:focus {
+	border-bottom: 1px solid #212121 !important;
+	box-shadow: none !important;
+}
+
+#name:blur, #link:blur {
+	border-bottom: 1px solid #212121 !important;
+}
+
+#submit {
+	margin-top: 5px !important;
+}
+
+#modal {
+	display: none;
+	z-index: 2;
+	top: 20px;
+	left: 20px;
+	background-color: #2196F3;
+	padding: 15px;
+	box-shadow: 2px 2px 5px -1px #212121;
+	margin-top: 30px;
+}
+
+#match_text {
+	color: white;
+	font-size: 30px;
+	margin-top: 0px;
+}
+
+#photo {
+	max-height: 232px;
+}
