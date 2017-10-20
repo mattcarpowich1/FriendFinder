@@ -12,9 +12,6 @@ $(document).ready(function() {
     // Prevent page from refreshing
     e.preventDefault();
 
-    // Save scores
-    var scores = [];
-
     // Make sure all fields have been filled
     // and display an error message if they're not
     var complete = true;
@@ -33,8 +30,6 @@ $(document).ready(function() {
         $('#message').text("Please fill out all form fields.");
         $('#message').show();
       }
-      // Save each value to scores array
-      scores.push($(value).val());
     });
 
     // If the form is completed...
@@ -46,14 +41,13 @@ $(document).ready(function() {
         url: "/api/friends",
         data: info
       }) ).then( function() {
-        // Hide the error message, and 
-        // get friends JSON 
+        // Hide the error message
         $('#message').hide();
+        // GET friends array from api
         $.ajax({
           type: "GET",
           url: "/api/friends"
-        }).done(function(data) {
-          var friends = data;
+        }).done(function(friends) {
           var bestMatch;
           var lowestDifference = 100;
           var you = friends[friends.length - 1];
@@ -75,6 +69,5 @@ $(document).ready(function() {
         });
       });
     }
-    
   });
 });

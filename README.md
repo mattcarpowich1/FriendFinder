@@ -1,2 +1,5 @@
 # FriendFinder
-Friend Finding Full Stack App that matches people based on survey results
+
+Node app that matches users based on survey results.
+
+LINK: https://friendlyfriendfinder.herokuapp.com/ 
