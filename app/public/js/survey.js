@@ -63,6 +63,9 @@ $(document).ready(function() {
               bestMatch = currentFriend;
             }
           }
+          // Hide the submit button
+          $('#submit').hide();
+          // Replace with the resulting match
           $('#photo').attr('src', bestMatch["photo"]);
           $('#friend_name').text(bestMatch["name"]);
           $('#modal').show();
