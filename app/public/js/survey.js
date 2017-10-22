@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  var submitted = false;
+
   // Initialize materialize select boxes
   $('select').material_select();
 
@@ -11,6 +13,11 @@ $(document).ready(function() {
 
     // Prevent page from refreshing
     e.preventDefault();
+
+    if (submitted) {
+      $('.modal').css("display", "block");
+      return false;
+    }
 
     // Make sure all fields have been filled
     // and display an error message if they're not
@@ -45,17 +52,32 @@ $(document).ready(function() {
         data: info
       }).done(function(match) {
 
+          submitted = true;
+
+          $('.modal').css("display", "block");
+
+          $('.modal-content > span').on("click", function() {
+            $('.modal').css("display", "none");
+            $('#submit').text("View Results");
+          });
+
+          var modal = document.getElementById('modal');
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+              if (event.target == modal) {
+                  modal.style.display = "none";
+                  $('#submit').text("View Results");
+              }
+          }
+
           // Hide message
           $('#message').hide();
-
-          // Hide the submit button
-          $('#submit').hide();
+          
 
           // Replace with the resulting match
           $('#photo').attr('src', match["photo"]);
           $('#friend_name').text(match["name"]);
-          $('#modal').show();
-          
           
         });
       }
