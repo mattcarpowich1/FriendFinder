@@ -39,60 +39,25 @@ $(document).ready(function() {
       var info = $('form').serialize();
 
       // Send a post request with form data
-      $.when($.ajax({
+      $.ajax({
         type: "POST",
         url: "/api/friends",
         data: info
-      })).then(function() {
-        // Hide the error message
-        $('#message').hide();
-        // GET friends array from api
-        $.ajax({
-          type: "GET",
-          url: "/api/friends"
-        }).done(function(friends) {
+      }).done(function(match) {
 
-          var bestMatch;
-
-          // Start off with an impossibly high number
-          var lowestDifference = 100;
-
-          // The last user in the array will be the most
-          // recent submission
-          var you = friends[friends.length - 1];
-
-          // Loop through all possible new friends...
-          for (var i = 0; i < friends.length - 1; i++) {
-
-            var currentFriend = friends[i];
-            var difference = 0;
-
-            // Loop through both arrays of scores
-            for (var j = 0; j < 10; j++) {
-
-              difference += Math.abs(
-                you.scores[j] - currentFriend.scores[j]);
-
-            }
-
-            // Keep the matches fresh
-            if (difference <= lowestDifference) {
-              lowestDifference = difference;
-              bestMatch = currentFriend;
-            }
-
-          }
+          // Hide message
+          $('#message').hide();
 
           // Hide the submit button
           $('#submit').hide();
 
           // Replace with the resulting match
-          $('#photo').attr('src', bestMatch["photo"]);
-          $('#friend_name').text(bestMatch["name"]);
+          $('#photo').attr('src', match["photo"]);
+          $('#friend_name').text(match["name"]);
           $('#modal').show();
           
+          
         });
-      });
-    }
+      }
   });
 });

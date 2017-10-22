@@ -7,10 +7,15 @@ router.get('/friends', (req, res) => {
 	res.json(friends);
 });
 
-// POST the form data from survey.html
+// POST the form data from survey.html,
+// and send back the best match 
 router.post('/friends', (req, res) => {
+
   let data = req.body;
-  let newFriend = {
+  let bestMatch;
+
+  // Save new user data 
+  let newUser = {
     name: data["name"],
     photo: data["link"],
     scores: [
@@ -26,8 +31,38 @@ router.post('/friends', (req, res) => {
       parseInt(data.q10)
     ]
   };
-  friends.push(newFriend);
-  res.redirect('/');
+
+  // Start off with an impossibly high number
+  let lowestDifference = 100;
+
+  // Loop through all possible new friends...
+  for (let i = 0; i < friends.length; i++) {
+
+    let currentFriend = friends[i];
+    let difference = 0;
+
+    // Loop through both arrays of scores
+    for (let j = 0; j < 10; j++) {
+
+      difference += Math.abs(
+        newUser.scores[j] - currentFriend.scores[j]);
+
+    }
+
+    // Keep the matches fresh
+    if (difference <= lowestDifference) {
+      lowestDifference = difference;
+      bestMatch = currentFriend;
+    }
+
+  }
+
+  // Add new user to the friends array in memory
+  friends.push(newUser);
+
+  // Send back JSON of best match
+  res.json(bestMatch);
+
 });
 
 module.exports = router;
